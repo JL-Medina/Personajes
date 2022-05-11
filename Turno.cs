@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Interfaz;
+
 
 namespace Personajes
 {
@@ -11,12 +11,15 @@ namespace Personajes
     {
         public static void Atacarse(IList<Personaje> personajes)
         {
-            List<Personaje> list = new();
-
+            foreach (Personaje pj in personajes)
+            {
+                pj.Atacar();
+            }
         }
-        public static void MoverFichas(IMoverse ficha)
+        public static void MoverFichas(Personaje personajes, int movimientosX, int movimientosY)
         {
-
+            personajes.MoverseEjeX(movimientosX);
+            personajes.MoverseEjeY(movimientosY);
         }
     }
 }

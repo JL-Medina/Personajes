@@ -42,3 +42,37 @@ El segundo recibe un objeto que implementa IMoverse y los hace moverse en el eje
 Hacer que en program reciba algunos personajes y un enemigo para probar.*/
 
 
+namespace Personajes;
+
+    public class Program
+    {
+        public static void Main()
+        {
+            PersonajeDeFuerza pjStrength = new("Saitama", 99, 0);
+            PersonajeDeAgilidad pjAgility = new("NightElf", 10, 60, 20);
+            PersonajeDeMagia pjMagic = new("Gandalf", 10, 30);
+            Enemigo pjEnemy = new("Gyobu", 9000, 3);
+
+            List<Personaje> personajes = new();
+            personajes.Add(pjStrength);
+            personajes.Add(pjAgility);    
+            personajes.Add(pjMagic);
+            personajes.Add(pjEnemy);
+
+            Turno.Atacarse(personajes);
+
+            Turno.MoverFichas(pjStrength, 2, 4);
+            Turno.MoverFichas(pjAgility, 4, 2);
+            Turno.MoverFichas(pjMagic, 1, -6);
+            Turno.MoverFichas(pjEnemy, 3, 7);
+
+        }
+        
+
+
+    }
+
+
+
+
+

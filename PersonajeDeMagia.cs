@@ -32,14 +32,36 @@ namespace Personajes
             Console.WriteLine($"{ nombre} hizo { x} de daño gracias a su magia");
         }
 
-        public override void MoverseEjeX()
+        public override void MoverseEjeX(int movimientos)
         {
-            throw new NotImplementedException();
+            if (movimientos > 0)
+            {
+                Console.WriteLine($"{nombre} se movio a la derecha {movimientos} casillas");
+            }
+            else if (movimientos < 0)
+            {
+                Console.WriteLine($"{nombre} se movio a la izquierda {movimientos * -1} casillas");
+            }
+            else
+            {
+                Console.WriteLine($"{nombre} no se movió en el eje X");
+            }
         }
 
-        public override void MoverseEjeY()
+        public override void MoverseEjeY(int movimientos)
         {
-            throw new NotImplementedException();
+            if (movimientos > 0)
+            {
+                Console.WriteLine($"{nombre} se movio hacia arriba {movimientos} casillas");
+            }
+            else if (movimientos < 0) 
+            {
+                Console.WriteLine($"{nombre} se movio hacia abajo {movimientos * -1} casillas"); 
+            }
+            else 
+            {
+                Console.WriteLine($"{nombre} no se movió en el eje Y"); 
+            }
         }
     }
 }
